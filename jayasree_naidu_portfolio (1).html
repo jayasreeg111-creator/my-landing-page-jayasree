@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayasree Naidu | Performance Marketing & Retail Media Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10151A;
+    --ink-soft:#1B232B;
+    --ink-softer:#232D36;
+    --paper:#F7F5EF;
+    --paper-dim:#EDEAE1;
+    --citrus:#CFE85C;
+    --citrus-dim:#9FB93E;
+    --coral:#FF6B4D;
+    --slate:#8B95A0;
+    --slate-dark:#4A535C;
+    --line:rgba(247,245,239,0.12);
+    --line-dark:rgba(16,21,26,0.12);
+    --display:'Space Grotesk', sans-serif;
+    --body:'Inter', sans-serif;
+    --mono:'JetBrains Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  section{position:relative;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(16,21,26,0.75);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1120px;margin:0 auto;padding:18px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{
+    font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:0.02em;
+    display:flex;align-items:center;gap:10px;
+  }
+  .logo .mark{
+    width:34px;height:34px;border-radius:8px;background:var(--citrus);
+    color:var(--ink);display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);font-weight:700;font-size:14px;
+  }
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{
+    font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);
+    transition:color 0.2s;
+  }
+  .nav-links a:hover{color:var(--citrus);}
+  .nav-cta{
+    font-family:var(--mono);font-size:12px;letter-spacing:0.04em;
+    border:1px solid var(--line);padding:9px 16px;border-radius:100px;
+    color:var(--paper);transition:all 0.2s;
+  }
+  .nav-cta:hover{border-color:var(--citrus);color:var(--citrus);}
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:168px 0 0 0;
+    background:
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(207,232,92,0.10), transparent 60%),
+      var(--ink);
+  }
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--citrus);display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:'';width:8px;height:8px;border-radius:50%;background:var(--citrus);
+    box-shadow:0 0 0 4px rgba(207,232,92,0.15);
+  }
+  .hero h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(42px,7vw,84px);line-height:1.02;letter-spacing:-0.02em;
+    max-width:900px;
+  }
+  .hero h1 span{color:var(--citrus);}
+  .hero .role{
+    font-family:var(--display);font-weight:500;font-size:clamp(18px,2.4vw,26px);
+    color:var(--slate);margin-top:18px;
+  }
+  .hero p.lede{
+    max-width:620px;margin-top:24px;font-size:17px;color:#C7CDD3;
+  }
+  .hero-cta{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--body);font-weight:600;font-size:14px;
+    padding:14px 26px;border-radius:100px;display:inline-flex;align-items:center;gap:8px;
+    transition:transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary{background:var(--citrus);color:var(--ink);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(207,232,92,0.25);}
+  .btn-ghost{border:1px solid var(--line);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--coral);color:var(--coral);transform:translateY(-2px);}
+  .btn-highlight{
+    background:var(--coral);color:var(--ink);
+    box-shadow:0 0 0 0 rgba(255,107,77,0.55);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  .btn-highlight:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,107,77,0.35);}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,107,77,0.45);}
+    70%{box-shadow:0 0 0 12px rgba(255,107,77,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,107,77,0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .btn-highlight{animation:none;}
+  }
+
+  .hero-contacts{
+    display:flex;gap:22px;flex-wrap:wrap;margin-top:44px;
+    font-family:var(--mono);font-size:13px;color:var(--slate);
+  }
+  .hero-contacts a:hover{color:var(--citrus);}
+
+  /* ---------- TICKER ---------- */
+  .ticker{
+    margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    overflow:hidden;white-space:nowrap;background:var(--ink-soft);
+  }
+  .ticker-track{
+    display:inline-flex;animation:scroll 34s linear infinite;
+  }
+  @keyframes scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  .ticker-item{
+    font-family:var(--mono);font-size:13px;letter-spacing:0.04em;
+    padding:14px 28px;display:inline-flex;align-items:center;gap:10px;
+    border-right:1px solid var(--line);color:#AEB6BE;
+  }
+  .ticker-item b{color:var(--citrus);font-weight:700;}
+  .ticker-item.alt b{color:var(--coral);}
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{animation:none;}
+  }
+
+  /* ---------- STATS ---------- */
+  .stats{padding:56px 0;background:var(--ink);}
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  }
+  .stat{background:var(--ink);padding:28px 24px;}
+  .stat .num{font-family:var(--display);font-size:34px;font-weight:700;color:var(--citrus);}
+  .stat .label{font-size:13px;color:var(--slate);margin-top:6px;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-pad{padding:96px 0;}
+  .section-head{margin-bottom:48px;max-width:640px;}
+  .section-tag{
+    font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--coral);margin-bottom:14px;display:block;
+  }
+  .section-head h2{
+    font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,42px);letter-spacing:-0.01em;
+  }
+  .section-head p{color:var(--slate);margin-top:14px;font-size:16px;}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--ink-soft);}
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:start;}
+  .about-body p{color:#C7CDD3;font-size:16.5px;margin-bottom:18px;}
+  .about-body p:last-child{margin-bottom:0;}
+  .about-side{
+    background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:28px;
+  }
+  .about-side h3{font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--citrus);margin-bottom:18px;}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .badge{
+    font-family:var(--mono);font-size:12px;padding:8px 12px;border-radius:8px;
+    background:var(--ink-softer);color:#C7CDD3;border:1px solid var(--line);
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .skill-card{
+    background:var(--ink-soft);border:1px solid var(--line);border-radius:16px;padding:26px;
+    transition:border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover{border-color:var(--citrus);transform:translateY(-4px);}
+  .skill-card .icon{font-size:26px;margin-bottom:16px;display:block;}
+  .skill-card h3{font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:8px;}
+  .skill-card p{font-size:14px;color:var(--slate);}
+
+  /* ---------- EXPERIENCE TIMELINE ---------- */
+  .timeline{position:relative;padding-left:32px;border-left:1px solid var(--line);}
+  .tl-item{position:relative;padding-bottom:48px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{
+    position:absolute;left:-37px;top:4px;width:12px;height:12px;border-radius:50%;
+    background:var(--citrus);box-shadow:0 0 0 5px var(--ink), 0 0 0 6px var(--line);
+  }
+  .tl-item.early .tl-dot{background:var(--slate);}
+  .tl-date{font-family:var(--mono);font-size:12px;color:var(--coral);letter-spacing:0.05em;margin-bottom:8px;display:block;}
+  .tl-item h3{font-family:var(--display);font-size:22px;font-weight:600;margin-bottom:4px;}
+  .tl-item .tl-sub{color:var(--slate);font-size:14px;margin-bottom:16px;}
+  .tl-item ul{display:grid;gap:8px;}
+  .tl-item li{
+    font-size:14.5px;color:#C7CDD3;padding-left:18px;position:relative;
+  }
+  .tl-item li::before{
+    content:'—';position:absolute;left:0;color:var(--citrus);
+  }
+  .tl-platforms{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .tl-brief{font-size:14.5px;color:#C7CDD3;}
+  .tl-platforms span{
+    font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:6px;
+    background:var(--ink-softer);color:var(--citrus);border:1px solid var(--line);
+  }
+
+  /* ---------- ACHIEVEMENTS ---------- */
+  .achieve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .achieve-card{
+    background:linear-gradient(160deg, var(--ink-soft), var(--ink-softer));
+    border:1px solid var(--line);border-radius:16px;padding:28px;
+  }
+  .achieve-card .tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--citrus);display:inline-block;margin-bottom:14px;
+    border:1px solid var(--citrus);padding:4px 10px;border-radius:100px;
+  }
+  .achieve-card h3{font-family:var(--display);font-size:19px;font-weight:600;margin-bottom:10px;}
+  .achieve-card p{font-size:14.5px;color:var(--slate);}
+
+  /* ---------- EDUCATION / LANGUAGES ---------- */
+  .edu-lang{background:var(--ink-soft);}
+  .edu-lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .edu-card{border-left:2px solid var(--citrus);padding-left:20px;margin-bottom:28px;}
+  .edu-card:last-child{margin-bottom:0;}
+  .edu-card h3{font-family:var(--display);font-size:18px;font-weight:600;}
+  .edu-card .meta{font-family:var(--mono);font-size:12.5px;color:var(--slate);margin-top:4px;}
+  .edu-card .score{font-size:14px;color:var(--citrus);margin-top:6px;}
+  .lang-list{display:grid;gap:14px;}
+  .lang-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 18px;background:var(--ink);border:1px solid var(--line);border-radius:10px;
+  }
+  .lang-row .name{font-family:var(--display);font-weight:600;font-size:15px;}
+  .lang-row .modes{font-family:var(--mono);font-size:11px;color:var(--slate);letter-spacing:0.04em;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:radial-gradient(ellipse 900px 500px at 15% 10%, rgba(255,107,77,0.10), transparent 60%), var(--ink);
+    text-align:center;
+  }
+  .contact .section-head{margin:0 auto 40px auto;text-align:center;max-width:560px;}
+  .contact-cards{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:40px;}
+  .contact-card{
+    background:var(--ink-soft);border:1px solid var(--line);border-radius:14px;
+    padding:22px 28px;min-width:220px;text-align:left;transition:border-color 0.2s;
+  }
+  .contact-card:hover{border-color:var(--citrus);}
+  .contact-card .k{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--slate);letter-spacing:0.08em;}
+  .contact-card .v{font-family:var(--display);font-size:16px;margin-top:6px;font-weight:600;}
+  .contact-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* ---------- CONNECT FORM ---------- */
+  .connect-form{
+    max-width:560px;margin:0 auto 40px auto;text-align:left;
+    background:var(--ink-soft);border:1px solid var(--line);border-radius:16px;
+    padding:32px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:18px;}
+  .form-row .field{margin-bottom:0;}
+  .field label{
+    display:block;font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--slate);margin-bottom:8px;
+  }
+  .field input, .field textarea{
+    width:100%;background:var(--ink);border:1px solid var(--line);border-radius:10px;
+    padding:12px 14px;color:var(--paper);font-family:var(--body);font-size:14.5px;
+    transition:border-color 0.2s;resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{outline:none;border-color:var(--citrus);}
+  .field input::placeholder, .field textarea::placeholder{color:#5C666F;}
+  .submit-btn{width:100%;justify-content:center;border:none;cursor:pointer;font-size:15px;margin-top:4px;}
+
+  /* ---------- THANK YOU OVERLAY ---------- */
+  .thanks-overlay{
+    position:fixed;inset:0;z-index:200;
+    background:rgba(16,21,26,0.85);backdrop-filter:blur(6px);
+    display:none;align-items:center;justify-content:center;padding:24px;
+  }
+  .thanks-overlay.show{display:flex;}
+  .thanks-card{
+    background:var(--ink-soft);border:1px solid var(--line);border-radius:20px;
+    padding:44px 36px;max-width:420px;text-align:center;
+  }
+  .thanks-icon{font-size:38px;display:block;margin-bottom:16px;}
+  .thanks-card h3{font-family:var(--display);font-size:26px;font-weight:700;margin-bottom:12px;}
+  .thanks-card p{color:var(--slate);font-size:14.5px;margin-bottom:26px;}
+  .thanks-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+  @media (max-width:560px){
+    .form-row{grid-template-columns:1fr;}
+    .connect-form{padding:24px;}
+  }
+
+  footer{
+    padding:32px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--slate);
+    border-top:1px solid var(--line);
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease, transform 0.6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .about-grid, .edu-lang-grid{grid-template-columns:1fr;gap:36px;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .skills-grid{grid-template-columns:repeat(2,1fr);}
+    .achieve-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .stats-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+    .hero{padding-top:140px;}
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{outline:2px solid var(--citrus);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo"><span class="mark">JN</span> JAYASREE NAIDU</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#education">Languages</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="mailto:jayasreeg111@gmail.com">Email Me</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <span class="eyebrow">Retail Media &amp; Paid Search</span>
+    <h1>Jayasree Naidu<br><span>Performance Marketer</span></h1>
+    <div class="role">Paid Search &amp; Retail Media Specialist</div>
+    <p class="lede">I plan, launch, and optimize paid search and retail media campaigns across Google Ads and Citrus Ad — turning daily pacing reports into lower CPAs, stronger CTR, and cleaner keyword strategy.</p>
+    <div class="hero-cta">
+      <a class="btn btn-ghost" href="#experience">View Experience</a>
+      <a class="btn btn-highlight" href="#contact">Get in Touch</a>
+    </div>
+    <div class="hero-contacts">
+      <a href="mailto:jayasreeg111@gmail.com">✉ jayasreeg111@gmail.com</a>
+      <a href="tel:+919742127775">☎ +91 9742127775</a>
+      <span>📍 Nuzvid, Vijayawada</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-track" id="tickerTrack">
+      <!-- duplicated in JS for seamless loop -->
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat">
+        <div class="num">5+</div>
+        <div class="label">Years in Paid Search &amp; Retail Media</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="label">Companies across ad-tech &amp; digital marketing</div>
+      </div>
+      <div class="stat">
+        <div class="num">4+</div>
+        <div class="label">Platforms: Google Ads, Citrus Ad, Pacvue, DOMO</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="label">Outstanding Performance Awards — Citrus Ad</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section-pad" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// About</span>
+      <h2>Detail-oriented, campaign-obsessed, results-driven.</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-body">
+        <p>I build and optimize paid search and retail media campaigns end to end — from ad group structure and ad copy to bid management, landing page testing, and keyword strategy. Google Analytics and daily pacing reports are how I keep every campaign honest, and weekly and monthly reporting is how I keep stakeholders informed.</p>
+        <p>My work has centered on driving conversion rate growth across PPC accounts, improving pacing and ROAS on retail media platforms, and running the kind of rigorous ad copy and landing page tests that keep keyword performance sharp. That approach earned Outstanding Performance recognition in both Q2 and Q4 2023 on the Citrus Ad platform.</p>
+        <p>I'm adaptable to fast-moving demands, comfortable owning reporting cadences from daily to monthly, and dedicated to quality over shortcuts.</p>
+      </div>
+      <div class="about-side">
+        <h3>Core Focus Areas</h3>
+        <div class="badge-row">
+          <span class="badge">Bid Management</span>
+          <span class="badge">Ad Copy Testing</span>
+          <span class="badge">Landing Page Optimization</span>
+          <span class="badge">Keyword Discovery</span>
+          <span class="badge">Pacing &amp; ROAS</span>
+          <span class="badge">SEM Reporting</span>
+          <span class="badge">Conversion Rate Growth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section-pad" id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// Platforms &amp; Skills</span>
+      <h2>Tools I run campaigns on, every day.</h2>
+      <p>Hands-on experience across search and retail media platforms, plus the reporting stack that keeps performance visible.</p>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <span class="icon">🔍</span>
+        <h3>Google Ads &amp; Editor</h3>
+        <p>Campaign and ad group creation, ad copy, manual bid adjustments, and CPA/CTR optimization.</p>
+      </div>
+      <div class="skill-card">
+        <span class="icon">🛒</span>
+        <h3>Citrus Ad (Retail Media)</h3>
+        <p>Display campaign creation, pacing and ROAS optimization, and advanced keyword discovery.</p>
+      </div>
+      <div class="skill-card">
+        <span class="icon">📊</span>
+        <h3>Pacvue &amp; DOMO</h3>
+        <p>Reporting and performance dashboards for daily, weekly, bi-weekly, and monthly campaign reviews.</p>
+      </div>
+      <div class="skill-card">
+        <span class="icon">📈</span>
+        <h3>Google Analytics</h3>
+        <p>Weekly and monthly reporting on search campaign performance for management review.</p>
+      </div>
+      <div class="skill-card">
+        <span class="icon">🧪</span>
+        <h3>Testing &amp; Optimization</h3>
+        <p>Regular landing page and ad copy tests to maintain keyword performance over time.</p>
+      </div>
+      <div class="skill-card">
+        <span class="icon">🗂️</span>
+        <h3>SEM Reporting</h3>
+        <p>Preparing and organizing performance reports across every cadence stakeholders need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section-pad" id="experience" style="background:var(--ink-soft);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// Experience</span>
+      <h2>Five years, three ad-tech platforms, one focus: performance.</h2>
+    </div>
+    <div class="timeline reveal">
+
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <span class="tl-date">May 2024 — June 2025</span>
+        <h3>Vuchi Medi Private Limited</h3>
+        <div class="tl-sub">Paid Search &amp; Google Ads</div>
+        <div class="tl-platforms"><span>Google Ads</span><span>Google Ads Editor</span></div>
+        <p class="tl-brief">Optimized CPA and CTR through bid management and daily pacing analysis.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <span class="tl-date">Feb 2023 — Apr 2024</span>
+        <h3>iSOCRATES LLC — Mysore</h3>
+        <div class="tl-sub">Retail Media &amp; Paid Search</div>
+        <div class="tl-platforms"><span>Citrus Ad</span><span>Google Ads</span><span>Pacvue</span><span>DOMO</span></div>
+        <p class="tl-brief">Ran Citrus Ad display campaigns, improving pacing, ROAS, and keyword discovery.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <span class="tl-date">June 2020 — January 2023</span>
+        <h3>Digimetrix Technologies Private Ltd — Bangalore</h3>
+        <div class="tl-sub">Paid Search / SEM</div>
+        <div class="tl-platforms"><span>Google Ads</span><span>SEM</span></div>
+        <p class="tl-brief">Built and optimized paid search campaigns end to end, from targeting to reporting.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section-pad" id="achievements">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// Achievements</span>
+      <h2>What the reports actually showed.</h2>
+    </div>
+    <div class="achieve-grid reveal">
+      <div class="achieve-card">
+        <span class="tag">Award</span>
+        <h3>Outstanding Performance — Q2 2023</h3>
+        <p>Recognized for results delivered on the Citrus Ad retail media platform.</p>
+      </div>
+      <div class="achieve-card">
+        <span class="tag">Award</span>
+        <h3>Outstanding Performance — Q4 2023</h3>
+        <p>Recognized again for continued results on the Citrus Ad retail media platform.</p>
+      </div>
+      <div class="achieve-card">
+        <span class="tag">Efficiency</span>
+        <h3>Lower CPA, Higher CTR</h3>
+        <p>Drove CPA reductions and CTR improvements across Google Ads accounts through bid management and ad copy testing.</p>
+      </div>
+      <div class="achieve-card">
+        <span class="tag">Retail Media</span>
+        <h3>Pacing &amp; ROAS Gains</h3>
+        <p>Delivered consistent pacing and ROAS improvements on Citrus Ad display campaigns.</p>
+      </div>
+      <div class="achieve-card">
+        <span class="tag">Strategy</span>
+        <h3>Advanced Keyword Discovery</h3>
+        <p>Built out keyword discovery practices that became a core strength for retail media campaign planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section class="section-pad edu-lang" id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// Languages</span>
+      <h2>Languages I work in.</h2>
+    </div>
+    <div class="lang-list reveal" style="max-width:560px;">
+      <div class="lang-row"><span class="name">English</span><span class="modes">READ · WRITE · SPEAK</span></div>
+      <div class="lang-row"><span class="name">Telugu</span><span class="modes">READ · WRITE · SPEAK</span></div>
+      <div class="lang-row"><span class="name">Kannada</span><span class="modes">READ · WRITE · SPEAK</span></div>
+      <div class="lang-row"><span class="name">Hindi</span><span class="modes">READ · SPEAK</span></div>
+      <div class="lang-row"><span class="name">Tamil</span><span class="modes">SPEAK</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / LET'S CONNECT -->
+<section class="section-pad contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// Contact</span>
+      <h2>Let's Connect</h2>
+      <p>Interested in my profile or experience in performance marketing and retail media? Share your details below and I'll get back to you.</p>
+    </div>
+
+    <div class="contact-cards reveal">
+      <div class="contact-card">
+        <div class="k">Email</div>
+        <div class="v">jayasreeg111@gmail.com</div>
+      </div>
+      <div class="contact-card">
+        <div class="k">Phone</div>
+        <div class="v">+91 9742127775</div>
+      </div>
+      <div class="contact-card">
+        <div class="k">Location</div>
+        <div class="v">Nuzvid, Vijayawada – 521201</div>
+      </div>
+    </div>
+
+    <form class="connect-form reveal" id="connectForm">
+      <div class="form-row">
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="field">
+          <label for="cf-phone">Phone Number</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="Your phone number">
+        </div>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email Address</label>
+        <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="field">
+        <label for="cf-message">Purpose / Message</label>
+        <textarea id="cf-message" name="message" rows="4" placeholder="What would you like to connect about?" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-highlight submit-btn">Submit Details</button>
+    </form>
+
+    <div class="contact-cta reveal">
+      <a class="btn btn-ghost" href="mailto:jayasreeg111@gmail.com">Email Me</a>
+      <a class="btn btn-ghost" href="tel:+919742127775">Call Me</a>
+      <a class="btn btn-ghost" href="https://wa.me/919742127775" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- THANK YOU OVERLAY -->
+<div class="thanks-overlay" id="thanksOverlay">
+  <div class="thanks-card">
+    <span class="thanks-icon">🎯</span>
+    <h3>Thank You!</h3>
+    <p>Your details have been submitted successfully. I've received your message and will get back to you shortly.</p>
+    <div class="thanks-cta">
+      <a class="btn btn-highlight" href="https://wa.me/919742127775?text=Hi%20Jayasree%2C%20I%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp Me</a>
+      <button type="button" class="btn btn-ghost" id="closeThanks">Back to Portfolio</button>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Jayasree Naidu. All rights reserved.</footer>
+
+<script>
+  // Build seamless ticker (duplicate content once for infinite loop)
+  const items = [
+    { label: 'CPA', val: 'OPTIMIZED', alt:false },
+    { label: 'CTR', val: 'IMPROVED', alt:true },
+    { label: 'ROAS', val: 'TRACKED', alt:false },
+    { label: 'PACING', val: '100% ON TARGET', alt:true },
+    { label: 'KEYWORD DISCOVERY', val: 'CITRUS AD', alt:false },
+    { label: 'Q2 2023', val: 'OUTSTANDING PERFORMANCE', alt:true },
+    { label: 'Q4 2023', val: 'OUTSTANDING PERFORMANCE', alt:false },
+    { label: 'REPORTING', val: 'DAILY / WEEKLY / MONTHLY', alt:false },
+    { label: 'BID MANAGEMENT', val: 'MANUAL ADJUSTMENTS', alt:true },
+  ];
+  const track = document.getElementById('tickerTrack');
+  function buildTicker(){
+    let html = '';
+    for(let rep=0; rep<2; rep++){
+      items.forEach(it=>{
+        html += `<span class="ticker-item${it.alt ? ' alt':''}">${it.label} <b>${it.val}</b></span>`;
+      });
+    }
+    track.innerHTML = html;
+  }
+  buildTicker();
+
+  // Connect form: open a pre-filled email to Jayasree, then show thank-you overlay
+  const connectForm = document.getElementById('connectForm');
+  const thanksOverlay = document.getElementById('thanksOverlay');
+  const closeThanks = document.getElementById('closeThanks');
+
+  connectForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('cf-name').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+
+    const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone || 'Not provided'}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+    window.location.href = `mailto:jayasreeg111@gmail.com?subject=${subject}&body=${body}`;
+
+    thanksOverlay.classList.add('show');
+    connectForm.reset();
+  });
+
+  closeThanks.addEventListener('click', function(){
+    thanksOverlay.classList.remove('show');
+  });
+  thanksOverlay.addEventListener('click', function(e){
+    if(e.target === thanksOverlay) thanksOverlay.classList.remove('show');
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
